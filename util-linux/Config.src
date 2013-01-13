@@ -75,7 +75,7 @@ config FEATURE_DMESG_PRETTY
 	    BIOS-provided physical RAM map:
 	     BIOS-e820: 0000000000000000 - 000000000009f000 (usable)
 
-	  Without this option (or with -r) you will see:
+	  Without this option you will see:
 	    # dmesg
 	    <5>Linux version 2.6.17.4 .....
 	    <6>BIOS-provided physical RAM map:
@@ -733,6 +733,15 @@ config FEATURE_VOLUMEID_FAT
 	depends on VOLUMEID
 	help
 	  TODO
+
+config FEATURE_VOLUMEID_EXFAT
+	bool "exFAT filesystem"
+	default y
+	depends on VOLUMEID
+	help
+	  exFAT (extended FAT) is a proprietary file system designed especially
+	  for flash drives. It has many features from NTFS, but with less
+	  overhead. exFAT is used on most SDXC cards for consumer electronics.
 
 config FEATURE_VOLUMEID_HFS
 	bool "hfs filesystem"
